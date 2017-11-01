@@ -2,6 +2,7 @@
 let's sort
 ---
 Quicksort
+---
 Merge sort
 --In-place merge sort
 Heap sort
