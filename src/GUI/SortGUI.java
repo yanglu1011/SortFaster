@@ -15,8 +15,9 @@ public class SortGUI extends JFrame {
 		f.setVisible(true);
 	}
 	
+	/* just for fun made the color pane */
 	// variable for window size
-	private final int WIDTH = 800;
+	private final int WIDTH = 255 * 255 * 255;
 	private final int HEIGHT = 800;
 	
 	public SortGUI() {
@@ -24,5 +25,7 @@ public class SortGUI extends JFrame {
 		this.setSize(WIDTH, HEIGHT);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		/* add Graphic view */
+		GraphicView gv = new GraphicView();
+		this.add(gv);
 	}
 }
