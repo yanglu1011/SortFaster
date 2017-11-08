@@ -1,7 +1,6 @@
 package GUI;
 
 import javax.swing.JFrame;
-import javax.swing.JScrollPane;
 
 /**
  * @author Yang Yang Lu, John Bui, Jordan Siaha
