@@ -15,7 +15,7 @@ import javax.swing.JScrollPane;
 public class GraphicView extends JPanel {
 
 	public GraphicView() {
-		// repaint();
+		/* */
 	}
 
 	@Override

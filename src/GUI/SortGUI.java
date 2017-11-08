@@ -1,5 +1,7 @@
 package GUI;
 
+import java.util.Random;
+
 import javax.swing.JFrame;
 
 /**
@@ -9,6 +11,9 @@ import javax.swing.JFrame;
  */
 public class SortGUI extends JFrame {
 
+	// size of the array
+	private int arrSize = 0;
+	
 	/* just a basic GUI to start with */
 	public static void main(String[] args) {
 		JFrame f = new SortGUI();
@@ -21,11 +26,37 @@ public class SortGUI extends JFrame {
 	private final int HEIGHT = 800;
 
 	public SortGUI() {
+		// hard code for testing
+		arrSize = 10;
+		int[] arr = generateSet(arrSize);
+		
+		for (int i = 0; i < arrSize; i++){
+			System.out.print(arr[i] + ", ");
+		}
 		this.setTitle("Testing");
 		this.setSize(WIDTH, HEIGHT);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		/* add Graphic view */
 		GraphicView gv = new GraphicView();
 		this.add(gv);
+	}
+
+	private int[] generateSet(int arrSize) {
+		Random r = new Random();
+		boolean[] inArr = new boolean[arrSize];
+		int[] arr = new int[arrSize];
+		
+		for (int i = 0; i < arrSize; i++){
+			int num = r.nextInt(arrSize);
+			// if already in array skip and try another array
+			if (inArr[num]){
+				i--;
+				continue;
+			}
+			
+			arr[i] = num;
+			inArr[num] = true;
+		}
+		return arr;
 	}
 }
