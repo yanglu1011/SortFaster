@@ -8,7 +8,7 @@ package sortAlgorithms;
 public class Heapsort extends SortingAlgorithm {
 
 	@Override
-	public void sort() {
+	public void sort(int[] arr) {
 		
 	}
 

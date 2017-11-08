@@ -7,7 +7,7 @@ package sortAlgorithms;
  * 
  */
 public abstract class SortingAlgorithm {
-	public abstract void sort();
+	public abstract void sort(int[] arr);
 
 	/* This should simply work */
 	public boolean isSort(int[] arr) {

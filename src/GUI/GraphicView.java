@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 /**
  * @author Yang Yang Lu, John Bui, Jordan Siaha
@@ -22,9 +23,12 @@ public class GraphicView extends JPanel {
 		super.paintComponent(g1);
 		Graphics2D g2 = (Graphics2D) g1;
 
+		
+		
+		/* this is going to be later */
 		/* let's try draw the colors through */
 		/* unsure about possible implement of sorting colors */
-		colorPane(g2);
+//		colorPane(g2);
 	}
 
 	public void colorPane(Graphics2D g2) {
@@ -33,6 +37,7 @@ public class GraphicView extends JPanel {
 		int x2 = 0;
 		int y2 = 800;
 		int r = 0, g = 0, b = 0;
+		
 		for (r = 0; r < 255; r++) {
 			Color c = new Color(r, g, b);
 			g2.setColor(c);
