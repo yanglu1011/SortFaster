@@ -10,10 +10,11 @@ public abstract class SortingAlgorithm {
 	public abstract void sort(int[] arr);
 
 	/* This should simply work */
-	public boolean isSort(int[] arr) {
+	public boolean isSorted(int[] arr) {
 		// just a run through to see if it is
 		// sorted from small to large
-		System.out.print("array: ");
+		System.out.println("checking on is sorted");
+		System.out.print("-array: ");
 		for (int i = 0; i < arr.length - 1; i++) {
 			/** @note this will add a space at the end of the print **/
 			System.out.print(arr[i] + ", ");

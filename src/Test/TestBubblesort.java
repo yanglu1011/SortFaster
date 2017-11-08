@@ -14,9 +14,19 @@ public class TestBubblesort {
 		SortingAlgorithm bs = new Bubblesort();
 		int[] arr = { 2, 3, 1, 5, 4};
 		
-		assertEquals(false, bs.isSort(arr));
+		assertEquals(false, bs.isSorted(arr));
 		bs.sort(arr);
-		assertEquals(true, bs.isSort(arr));
+		assertEquals(true, bs.isSorted(arr));
+	}
+	
+	@Test
+	public void alreadySorted() {
+		SortingAlgorithm bs = new Bubblesort();
+		int[] arr = { 1, 2, 3, 4, 5};
+		
+		assertEquals(true, bs.isSorted(arr));
+		bs.sort(arr);
+		assertEquals(true, bs.isSorted(arr));
 	}
 
 }
