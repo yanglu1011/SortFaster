@@ -30,15 +30,13 @@ public class SortGUI extends JFrame {
 		arrSize = 10;
 		int[] arr = generateSet(arrSize);
 		
-		for (int i = 0; i < arrSize; i++){
-			System.out.print(arr[i] + ", ");
-		}
 		this.setTitle("Testing");
 		this.setSize(WIDTH, HEIGHT);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		/* add Graphic view */
-		GraphicView gv = new GraphicView();
+		GraphicView gv = new GraphicView(arr, WIDTH, HEIGHT);
 		this.add(gv);
+		this.addKeyListener(gv.getKeyListeners()[0]);
 	}
 
 	private int[] generateSet(int arrSize) {

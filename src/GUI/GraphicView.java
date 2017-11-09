@@ -3,9 +3,12 @@ package GUI;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+
+import sortAlgorithms.Bubblesort;
 
 /**
  * @author Yang Yang Lu, John Bui, Jordan Siaha
@@ -14,21 +17,80 @@ import javax.swing.JScrollPane;
  */
 public class GraphicView extends JPanel {
 
-	public GraphicView() {
-		/* */
+	
+	
+	private class KeyboardListener implements KeyListener {
+
+		@Override
+		public void keyPressed(KeyEvent key) {
+			if (key.getKeyCode() == KeyEvent.VK_SPACE){
+				bs.sort(arr);
+				bs.isSorted(arr);
+				repaint();
+			}
+		}
+
+		@Override
+		public void keyReleased(KeyEvent arg0) {
+		}
+
+		@Override
+		public void keyTyped(KeyEvent arg0) {
+		}
+
 	}
+
+	private int[] arr;
+	private int width;
+	private int height;
+	private Bubblesort bs = new Bubblesort();
+	
+	public GraphicView(int[] arr, int width, int height) {
+		this.arr = arr;
+		this.width = width;
+		this.height = height;
+		this.addKeyListener(new KeyboardListener());
+	}
+		
 
 	@Override
 	public void paintComponent(Graphics g1) {
 		super.paintComponent(g1);
 		Graphics2D g2 = (Graphics2D) g1;
 
-		
+		// draw the array boxes
+		drawNodes(g2);
+		drawValue(g2);
 		
 		/* this is going to be later */
 		/* let's try draw the colors through */
 		/* unsure about possible implement of sorting colors */
 //		colorPane(g2);
+	}
+
+	/* I am thinking to draw grid size based off the available space across the window */
+	private void drawNodes(Graphics2D g2) {
+		int halfH = height / 2;
+		int space = width / arr.length;
+//		System.out.println(space);
+		int nodeSize = space - 5;
+		// start position
+		int startY = halfH - nodeSize / 2;
+		for (int i = 0; i < arr.length; i++){
+			g2.drawRect(i * space, startY, nodeSize, nodeSize);
+		}
+	}
+	
+	private void drawValue(Graphics2D g2) {
+		int halfH = height / 2;
+		int space = width / arr.length;
+		int nodeSize = space - 5;
+		// start position
+		int startY = halfH - nodeSize / 2;
+		for (int i = 0; i < arr.length; i++){
+			String str = "" + arr[i];
+			g2.drawString(str, i * space + space / 2, halfH);
+		}
 	}
 
 	public void colorPane(Graphics2D g2) {
