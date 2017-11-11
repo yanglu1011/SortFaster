@@ -1,7 +1,7 @@
 package sortAlgorithms;
 
 /**
- * @author Yang Yang Lu, John Bui, Jordan Siaha
+ * @authors Yang Yang Lu, John Bui, Jordan Siaha
  *
  * @comment Insertionsort
  */
