@@ -9,7 +9,9 @@ package sortAlgorithms;
 public abstract class SortingAlgorithm {
 	public abstract void sort(int[] arr);
 
-	/* This should simply work */
+	/**
+	 * Check if the algorithm sorted the array correctly.
+	 */
 	public boolean isSorted(int[] arr) {
 		// just a run through to see if it is
 		// sorted from small to large
