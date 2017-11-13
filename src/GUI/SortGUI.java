@@ -13,6 +13,8 @@ public class SortGUI extends JFrame {
 
 	// size of the array
 	private int arrSize = 0;
+	/* Yang: this is testing */
+	public static GraphicView gv;
 	
 	/* just a basic GUI to start with */
 	public static void main(String[] args) {
@@ -34,7 +36,7 @@ public class SortGUI extends JFrame {
 		this.setSize(WIDTH, HEIGHT);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		/* add Graphic view */
-		GraphicView gv = new GraphicView(arr, WIDTH, HEIGHT);
+		gv = new GraphicView(arr, WIDTH, HEIGHT);
 		this.add(gv);
 		this.addKeyListener(gv.getKeyListeners()[0]);
 	}
