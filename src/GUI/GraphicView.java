@@ -11,6 +11,7 @@ import java.util.Observer;
 import javax.swing.JPanel;
 
 import sortAlgorithms.Bubblesort;
+import sortAlgorithms.Insertionsort;
 
 /**
  * @author Yang Yang Lu, John Bui, Jordan Siaha
@@ -24,7 +25,7 @@ public class GraphicView extends JPanel implements Observer {
 
 		@Override
 		public void run() {
-			bs.sort(arr);
+			is.sort(arr);
 		}
 
 	}
@@ -37,8 +38,8 @@ public class GraphicView extends JPanel implements Observer {
 			if (key.getKeyCode() == KeyEvent.VK_SPACE) {
 				// start the sort
 				if (!started) {
-					new Thread(new Sort()).start();
 					started = true;
+					new Thread(new Sort()).start();
 				} else {
 					System.out.println("sort already started, step with S button");
 				}
@@ -67,6 +68,7 @@ public class GraphicView extends JPanel implements Observer {
 	private int width;
 	private int height;
 	private Bubblesort bs = new Bubblesort();
+	private Insertionsort is = new Insertionsort();
 	private boolean clicked = false;
 	private boolean started = false;
 	// make for marking comparison
